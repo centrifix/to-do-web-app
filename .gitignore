@@ -1,5 +1,9 @@
+# Root-level ignore rules
 node_modules/
 .env
 client/node_modules/
 server/node_modules/
+build/
+dist/
+.DS_Store
 *.log
