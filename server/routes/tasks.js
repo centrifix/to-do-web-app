@@ -41,8 +41,10 @@ router.patch("/:id", (req, res) => {
 
   if (!task) return res.status(404).json({ message: "Task not found" });
 
-  if (req.body.completed !== undefined) {
+  if (typeof req.body.completed === "boolean") {
     task.completed = req.body.completed;
+  } else {
+    task.completed = !task.completed;
   }
 
   res.json(task);

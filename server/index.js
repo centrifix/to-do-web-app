@@ -2,6 +2,7 @@ const express = require("express"); // import express
 const cors = require("cors"); // import cors
 require("dotenv").config();
 const taskRoutes = require("./routes/tasks"); // importing tasks.js
+const aboutRoute = require("./routes/about");
 
 
 // starting server
@@ -9,6 +10,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/tasks", taskRoutes); // taskroutes becomes avilable http://.../tasks
+app.use("/about", aboutRoute);
 
 
 // default landing page route, posts a message

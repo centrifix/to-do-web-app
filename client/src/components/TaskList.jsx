@@ -24,21 +24,23 @@ function TaskList() {
         }
     };
 
-    const handleComplete = async (id) => {
+    const handleComplete = async (id, currentStatus) => {
         try {
-            await fetch(`http://localhost:5000/tasks/${id}`, {
+            const res = await fetch(`http://localhost:5000/tasks/${id}`, {
                 method: "PATCH", // or PUT if you prefer
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ completed: true }), // or toggle it dynamically
+                body: JSON.stringify({ completed: !currentStatus }), // or toggle it dynamically
             });
+
+            const updatedTask = await res.json();
 
             setTasks((prev) =>
                 prev.map((task) =>
-                    task.id === id ? { ...task, completed: true } : task
+                    task.id === id ? { ...task, completed: updatedTask.completed } : task
                 )
             );
         } catch (err) {
-            console.error("Error marking task complete:", err);
+            console.error("Error toggling task copmlete:", err);
         }
     };
 
@@ -54,7 +56,8 @@ function TaskList() {
                     {tasks.map((task) => (
                         <li key={task.id}>
                             {task.title} {task.completed ? "✅" : ""}
-                            <button onClick={() => handleComplete(task.id)}>Complete</button>
+                            <button onClick={() => handleComplete(task.id, task.completed)}>
+                                {task.completed ? "Undo" : "Complete"}</button>
                             <button onClick={() => handleDelete(task.id)}>Delete</button>
                         </li>
                     ))}

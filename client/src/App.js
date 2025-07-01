@@ -1,3 +1,4 @@
+import AboutInfo from "./components/AboutInfo";
 import TaskList from "./components/TaskList";
 import { useEffect, useState } from "react";
 
@@ -16,6 +17,7 @@ function App() {
       <h1>Todo App</h1>
       <p>{message}</p>
       <TaskList />
+      <AboutInfo />
     </div>
   );
 }
