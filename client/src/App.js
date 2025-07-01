@@ -13,7 +13,7 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div className = "app-container">
       <h1>Todo App</h1>
       <p>{message}</p>
       <TaskList />

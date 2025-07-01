@@ -30,7 +30,7 @@ function NewTaskForm({ onTaskAdded }) {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
-      <button type="submit">Add</button>
+      <button className = "button button-add" type="submit">Add</button>
     </form>
   );
 }

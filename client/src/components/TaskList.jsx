@@ -54,11 +54,16 @@ function TaskList() {
             ) : (
                 <ul>
                     {tasks.map((task) => (
-                        <li key={task.id}>
-                            {task.title} {task.completed ? "✅" : ""}
-                            <button onClick={() => handleComplete(task.id, task.completed)}>
+                        <li className="task-item" key={task.id}>
+                            <span className={task.completed ? "task-title completed" : "task-title"}>
+                                {task.title} {task.completed ? "✅" : ""}
+                            </span>
+                            
+                            <div className = "task-actions">
+                            <button className="button button-complete" onClick={() => handleComplete(task.id, task.completed)}>
                                 {task.completed ? "Undo" : "Complete"}</button>
-                            <button onClick={() => handleDelete(task.id)}>Delete</button>
+                            <button className="button button-delete" onClick={() => handleDelete(task.id)}>X</button>
+                            </div>
                         </li>
                     ))}
                 </ul>
