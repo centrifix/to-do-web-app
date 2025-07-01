@@ -30,3 +30,13 @@ Finally, I added a "Complete" button. I created a PATCH /tasks/:id route in the 
 This was my first real experience building full CRUD (Create, Read, Update, Delete) functionality across both client and server. Seeing this all come together is super satisfying. I'm excited for tomorrow's development :)
 
 Final note: I removed some boilerplate code (app.css, logo.svg, app.test.js, and so on)
+
+### 7/1/25
+
+Today was a big day! I added toggling when you complete a task. If a task is marked as complete, you can hit 'undo' to mark it as incomplete. The biggest part of today was the styling.
+
+I added styling for the whole page (not much yet), making the UI look way cleaner and better than plain text in a window. I attempted to use tailwindcss at first, but got frustrated by the inconsistent documentation I found online. I imagine trying to use it in a react app is different than in other use cases, but I ultimately decided to go with what I know best: importing good 'ol index.css. 
+
+I also added an about section with placeholder content for fun.
+
+The web app is really coming together, and I think the next step might be to integrate the database portion. Until next time!
