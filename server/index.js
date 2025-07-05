@@ -15,7 +15,9 @@ app.use("/about", aboutRoute);
 
 // default landing page route, posts a message
 app.get("/", (req, res) => {
-  res.send("API is running 🚀");
+  const now = new Date();
+  const formattedDate = now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+  res.send(`Welcome. Today is ${formattedDate}. What's the plan for today?`);
 });
 
 // tell the server to listen on port defined in .env or port 5000

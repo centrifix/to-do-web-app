@@ -40,3 +40,13 @@ I added styling for the whole page (not much yet), making the UI look way cleane
 I also added an about section with placeholder content for fun.
 
 The web app is really coming together, and I think the next step might be to integrate the database portion. Until next time!
+
+### 7/5/25
+
+Yesterday was the fourth of July, and despite the fireworks and frozen margaritas that occupied me last night, I couldn't help but think about ideas for my web app. 
+
+Although I am a bit embarrassed to admit, my mind was only focused on how I would implement databases! I integrated a persistent database using SQLite with the better-sqlite3 library. I set up the database schema, created a tasks table, and refactored the backend API routes to interact with the database instead of an in memory array.
+
+I had an issue at one point when I neglected to create the /data directory in my server folder, and experienced a few syntax errors as well. Nothing I couldn't handle, however, and it wasn't long until I was able to remedy the issues.
+
+I'm pretty excited to dive into user authentication next. Until next time!
